@@ -1,17 +1,45 @@
 aid: raya
 name: Raya
-description: 'Raya is a company surfaced via the API Evangelist harvest backlog (source: secondary-market)
-  and added to the network as a stub for full-pipeline profiling.'
+image: https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/77/6f/1c/776f1cab-941a-a60e-9a13-8cee1a625276/AppIcon-0-0-1x_U007ephone-0-1-0-0-sRGB-85-220.png/512x512bb.jpg
+description: 'Raya (legal entity Raya App Inc) is a private, membership-based global community for
+  dating, friendship, and professional networking, founded by Daniel Gendelman in 2014 and launched
+  in February 2015 out of Los Angeles, California. Membership is application-only: applications are
+  reviewed on an ongoing basis by a global committee, an Instagram handle is required for identity
+  verification, and accepted members choose a 1, 6, or 12 month paid subscription. The product is
+  iOS-only (App Store id 957215308, minimum iOS 17.0) and is known for photo-slideshow profiles set
+  to music, screenshot detection, and a community drawn heavily from creative industries. Public
+  sources report roughly $15.5M raised from investors including Cowboy Ventures, Dreamers VC and
+  S32, and the company appears on secondary marketplaces such as Forge Global and EquityZen. It is a
+  consumer application company, not an API provider: enrichment probed rayatheapp.com, raya.co,
+  api.rayatheapp.com, api.raya.co and icecream.rayatheapp.com and found no developer portal, no
+  documentation, no OpenAPI/GraphQL/AsyncAPI contract, no MCP server, and no A2A agent card. The
+  api.rayatheapp.com host is a private first-party mobile backend that returns 404 to every
+  unauthenticated path. This profile is identity-only pending a public API surface.'
 url: https://raw.githubusercontent.com/api-evangelist/raya/refs/heads/main/apis.yml
 x-type: company
 x-source: harvest:secondary-market
+x-secondary-market: https://forgeglobal.com/raya_stock/
 x-tier: stub
 x-tier-reason: harvest
 specificationVersion: '0.20'
 created: '2026-08-02'
 modified: '2026-08-02'
+x-enrichment:
+  date: '2026-08-02'
+  status: minimal
+  artifacts_added: 3
+  pass: local-v1
 tags:
 - Company
+- Consumer
+- Social Networking
+- Dating
+- Community
+- Membership
+- Mobile
+- iOS
+- Subscription
+- Los Angeles
 apis: []
 maintainers:
 - FN: Kin Lane
@@ -19,5 +47,31 @@ maintainers:
 - FN: APIs.json
   email: info@apis.io
 common:
+- type: DomainSecurity
+  url: security/raya-domain-security.yml
 - type: Website
-  url: https://forgeglobal.com/raya_stock/
+  url: https://www.rayatheapp.com/
+- type: About
+  url: https://www.rayatheapp.com/about
+- type: Pricing
+  url: https://www.rayatheapp.com/membership
+- type: SignUp
+  url: https://www.rayatheapp.com/app/apply
+- type: TermsOfService
+  url: https://www.rayatheapp.com/terms
+- type: PrivacyPolicy
+  url: https://www.rayatheapp.com/privacy
+- type: Support
+  url: mailto:contact@rayatheapp.com
+- type: Careers
+  url: https://rayatheapp.com/careers
+- type: Jobs
+  url: https://jobs.lever.co/raya/
+- type: GitHubOrganization
+  url: https://github.com/RayaTheApp
+- type: Crunchbase
+  url: https://www.crunchbase.com/organization/raya
+- type: LinkedIn
+  url: https://www.linkedin.com/company/rayatheapp
+- type: LLMsTxt
+  url: llms/raya-llms.txt

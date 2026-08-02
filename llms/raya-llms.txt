@@ -1,0 +1,41 @@
+# Raya
+
+> Raya (Raya App Inc) is a private, membership-based global community for dating, friendship, and professional networking. Founded by Daniel Gendelman in 2014 and launched in February 2015 out of Los Angeles, California. Membership is application-only, reviewed on an ongoing basis by a global committee; accepted members choose a 1, 6, or 12 month paid subscription. The product is iOS-only.
+
+Raya is a consumer application company, not an API provider. As of 2026-08-02 there is no public developer program: no developer portal, no API documentation, no OpenAPI/GraphQL/AsyncAPI contract, no SDKs, no CLI, no MCP server, no webhooks, and no A2A agent card. `api.rayatheapp.com` is a private first-party mobile backend that returns a JSON 404 for every unauthenticated path. Do not attempt to integrate with it; there is no published, supported interface.
+
+## Company
+
+- [Website](https://www.rayatheapp.com/): Product homepage and membership application entry point.
+- [About](https://www.rayatheapp.com/about): How the application and review committee work, community principles, and contact.
+- [Membership](https://www.rayatheapp.com/membership): Membership tiers and subscription fee information.
+- [Apply](https://www.rayatheapp.com/app/apply): The membership application flow (Instagram handle required for verification).
+- [Careers](https://rayatheapp.com/careers): Open roles.
+- [Jobs board](https://jobs.lever.co/raya/): Live postings hosted on Lever.
+- [GitHub organization](https://github.com/RayaTheApp): Public org; contents are forks of third-party open source (iOS/Swift libraries, GitHub Actions, infra tooling), not first-party SDKs or specifications.
+
+## Legal
+
+- [Terms of Use](https://www.rayatheapp.com/terms)
+- [Privacy Policy](https://www.rayatheapp.com/privacy)
+
+## Product
+
+- [Raya on the App Store](https://apps.apple.com/us/app/raya/id957215308): iOS only, minimum iOS 17.0. Seller: Raya App Inc.
+
+## Contact
+
+- General, application, opportunity, and other inquiries: contact@rayatheapp.com
+- Press inquiries: press@rayatheapp.com
+- Careers: careers@rayatheapp.com
+
+## API Evangelist artifacts
+
+- [apis.yml](https://raw.githubusercontent.com/api-evangelist/raya/refs/heads/main/apis.yml): APIs.json 0.20 profile for Raya.
+- [Domain security](https://raw.githubusercontent.com/api-evangelist/raya/refs/heads/main/security/raya-domain-security.yml): Probed TLS/HSTS/DNSSEC/CAA/SPF/DMARC posture.
+- [Well-known probe](https://raw.githubusercontent.com/api-evangelist/raya/refs/heads/main/well-known/raya-well-known.yml): Result of probing `/.well-known/*` across every Raya host, including the single-page-app catch-all 200s that are NOT documents.
+
+## Notes
+
+- The web hosts (rayatheapp.com, www.rayatheapp.com, raya.co) serve a client-rendered React SPA that answers HTTP 200 with the same HTML shell for every path. Treat any 200 from those hosts for `/openapi.json`, `/llms.txt`, or `/.well-known/*` as a false positive.
+- Public sources report roughly $15.5M raised, with investors including Cowboy Ventures, Dreamers VC, and S32. Shares appear on secondary marketplaces including Forge Global and EquityZen.
