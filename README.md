@@ -64,46 +64,84 @@
 > Full detail: **[Where this data comes from](https://apievangelist.com/about/where-our-data-comes-from)**
 <!-- API-EVANGELIST-PROVENANCE:END -->
 
-Raya (legal entity **Raya App Inc**) is a private, membership-based global community for dating,
-friendship, and professional networking. Founded by Daniel Gendelman in 2014 and launched in
-February 2015 out of Los Angeles, California. Membership is application-only — applications are
-reviewed on an ongoing basis by a global committee, an Instagram handle is required for identity
-verification, and accepted members choose a 1, 6, or 12 month paid subscription. The product is
-iOS-only.
+Raya (legal entity Raya App Inc) is a private, membership-based global community for dating, friendship, and professional networking, founded by Daniel Gendelman in 2014 and launched in February 2015 out of Los Angeles, California. Membership is application-only: applications are reviewed on an ongoing basis by a global committee, an Instagram handle is required for identity verification, and accepted members choose a 1, 6, or 12 month paid subscription. The product is iOS-only (App Store id 957215308, minimum iOS 17.0) and is known for photo-slideshow profiles set to music, screenshot detection, and a community drawn heavily from creative industries. Public sources report roughly $15.5M raised from investors including Cowboy Ventures, Dreamers VC and S32, and the company appears on secondary marketplaces such as Forge Global and EquityZen. It is a consumer application company, not an API provider: enrichment probed rayatheapp.com, raya.co, api.rayatheapp.com, api.raya.co and icecream.rayatheapp.com and found no developer portal, no documentation, no OpenAPI/GraphQL/AsyncAPI contract, no MCP server, and no A2A agent card. The api.rayatheapp.com host is a private first-party mobile backend that returns 404 to every unauthenticated path. This profile is identity-only pending a public API surface.
 
-- Website: https://www.rayatheapp.com/
-- App Store: https://apps.apple.com/us/app/raya/id957215308
-- Secondary market listing: https://forgeglobal.com/raya_stock/
+**Areas:** Company · Consumer · Social Network · Dating · Community · Membership · Mobile · iOS · Subscription · Los Angeles
 
-## API surface
+## Raya on APIs.io
 
-**None public.** As of 2026-08-02, enrichment probed `rayatheapp.com`, `www.rayatheapp.com`,
-`raya.co`, `api.rayatheapp.com`, `api.raya.co` and `icecream.rayatheapp.com` and found:
+Everything profiled for Raya is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/raya/](https://apis.io/providers/raya/)** — or go straight to one of the APIs or properties below.
 
-- no developer portal, API documentation, or API reference
-- no OpenAPI / Swagger / GraphQL / AsyncAPI contract
-- no MCP server and no A2A agent card
-- no first-party SDK on npm, PyPI, or the public GitHub org
-- no `/.well-known/` document of any kind
+### Published properties
 
-`api.rayatheapp.com` and `icecream.rayatheapp.com` are private first-party mobile backends that
-return `{"statusCode":404,"error":"Not Found","message":"Not Found"}` for every unauthenticated
-path. The public web hosts run a client-rendered React SPA that answers **HTTP 200 with the same
-HTML shell for every path** — so any 200 from those hosts for `/openapi.json`, `/llms.txt`, or
-`/.well-known/*` is a catch-all false positive, not a document. See
-[`well-known/raya-well-known.yml`](well-known/raya-well-known.yml) for the recorded probe.
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
 
-The public GitHub org [RayaTheApp](https://github.com/RayaTheApp) contains only forks of third-party
-open source (iOS/Swift libraries, GitHub Actions, infrastructure tooling) — no first-party SDKs or
-specifications.
+#### Security (1)
 
-This repository is therefore an **identity-only** profile pending a public API surface.
+Authentication, trust centre, and vulnerability disclosure.
 
-## Artifacts
+- [Raya Domain Security](https://apis.io/security/raya/raya-domain-security/)
 
-| Path | Type | Method |
-|---|---|---|
-| `apis.yml` | APIs.json 0.20 profile | searched |
-| `security/raya-domain-security.yml` | DomainSecurity | probed |
-| `well-known/raya-well-known.yml` | well-known probe record (no documents found) | probed |
-| `llms/raya-llms.txt` | LLMsTxt | generated |
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
+
+- [Website](https://www.rayatheapp.com/)
+- [Pricing](https://www.rayatheapp.com/membership)
+- [Sign up](https://www.rayatheapp.com/app/apply)
+- [Terms of service](https://www.rayatheapp.com/terms)
+- [Privacy policy](https://www.rayatheapp.com/privacy)
+- [GitHub](https://github.com/RayaTheApp)
+
+## API Evangelist rating
+
+**Kin Score 7.6** — minimal · rubric 0.24.0 · scored 2026-10-17
+
+| Facet | Score |
+|---|---|
+| Discoverability | 55.4 |
+| Contract quality | 0.0 |
+| Contract governance | 0.0 |
+| Operational transparency | 2.6 |
+| Developer ergonomics | 4.8 |
+| Access clarity | 10.5 |
+
+**Agent readiness 0.0** — human-only
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | — |
+| Agentic Access | — |
+| Reversibility Documented | — |
+| MCP Server | — |
+| Auth Clarity | — |
+| Idempotency | — |
+| Error Semantics | — |
+| OpenAPI Examples | — |
+| Rate Limit Signal | — |
+| Event Surface Described | — |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+
+**Regulatory alignment 5.9** — Horizontal (data, software, accessibility, platform)
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/raya/](https://apis.io/providers/raya/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Raya: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/raya/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
